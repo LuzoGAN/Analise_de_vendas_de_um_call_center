@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import pandas as pd
 
 # import from folders/themes changer
-from dash_bootstrap_templates import ThemesSwitchAIO
+from dash_bootstrap_templates
 import dash
 
 FONT_AWESOME = ['https://use.fontawesome.com/releases/v5.10.2/css/all.css']
