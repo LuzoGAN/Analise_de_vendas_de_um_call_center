@@ -69,7 +69,7 @@ df['Valor Pago'] = df['Valor Pago'].astype(int)
 df['Status de Pagamento'] = df['Status de Pagamento'].astype(int)
 
 # Criando opções pros filtros
-options_month = [{'label': 'Anoto todo', 'value':0}]
+options_month = [{'label': 'Ano todo', 'value':0}]
 for i, j in zip(df_cru['Mês'].unique(), df['Mês'].unique()):
     options_month.append({'label': i, 'value': j})
 options_month = sorted(options_month, key=lambda x: x['value'])
@@ -106,7 +106,7 @@ app.layout = dbc.Container(children=[
                 dbc.CardBody([
                     dbc.Row([
                         dbc.Col([
-                            html.Legend("Sales Analytics")
+                            html.Legend("Análise de Vendas")
                         ], sm=8),
                         dbc.Col([
                             html.I(className='fa fa-balance-scale', style={'font-size': '300%'})
@@ -115,7 +115,7 @@ app.layout = dbc.Container(children=[
                     dbc.Row([
                         dbc.Col([
                             ThemeSwitchAIO(aio_id="theme", themes=[url_theme1, url_theme2]),
-                            html.Legend("Asimov Academy")
+                            html.Legend("Luzo Gomes")
                         ])
                     ], style={'margin-top': '10px'}),
                     dbc.Row([
@@ -233,7 +233,7 @@ app.layout = dbc.Container(children=[
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    html.H4('valores de propagandas convertido por mês'),
+                    html.H4('Valores de propagandas convertido por mês'),
                     dcc.Graph(id='graph10', className='dbc', config=config_graph)
                 ])
             ], style=tab_card)
@@ -511,7 +511,7 @@ def graph11(month, team, toggle):
 
     fig11 = go.Figure()
     fig11.add_trace(go.Indicator(mode='number',
-                                 title={"text": f"<span style='font-size:150%'>Valor Total</sapn><br><span style='font-size:70%'>Em Reais</span<br>"},
+                                 title={"text": f"<span style='font-size:150%'>Valor Total</span><br><span style='font-size:70%'>Em Reais</span><br>"},
                                  value = df_11['Valor Pago'].sum(),
                                  number = {'prefix': "R$"}
                                  ))
@@ -524,4 +524,4 @@ def graph11(month, team, toggle):
 
 # Run server
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8051)
+    app.run_server(debug=False)
