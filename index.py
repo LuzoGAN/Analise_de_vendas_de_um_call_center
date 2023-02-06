@@ -309,7 +309,7 @@ def graph3(team, toggle):
     df_3 = df_3.groupby('Dia')["Chamadas Realizadas"].sum().reset_index()
     fig3 = go.Figure(go.Scatter(
         x=df_3['Dia'], y=df_3['Chamadas Realizadas'], mode='lines', fill='tonexty'))
-    fig3.add_annotation(text='Chamdas Médias por dia do Mês',
+    fig3.add_annotation(text='Chamadas Médias por dia do Mês',
                         xref='paper',yref='paper',
                         font= dict(
                             size=17,
